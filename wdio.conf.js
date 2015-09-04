@@ -113,10 +113,13 @@ exports.config = {
     before: function() {
         var chai = require('chai');
         var chaiAsPromised = require('chai-as-promised');
+        var v1driver = require('./lib/v1driver');
 
         chai.use(chaiAsPromised);
         expect = chai.expect;
         chai.Should();
+
+        v1driver.init(browser);
     },
     //
     // Gets executed after all tests are done. You still have access to all global variables from
