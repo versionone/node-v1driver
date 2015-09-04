@@ -1,5 +1,3 @@
-
-
 describe('Targeting', function () {
 	it("should look by content", function*() {
 		yield browser.url("file:///" + __dirname + "/examples/labels.html")
