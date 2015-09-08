@@ -1,0 +1,31 @@
+{
+  "name": "v1driver",
+  "version": "0.0.1",
+  "description": "Automation driver to interact with VersionOne.",
+  "main": "v1driver.js",
+  "scripts": {
+    "test": "node_modules/.bin/wdio wdio.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/versionone/node-v1driver.git"
+  },
+  "keywords": [
+    "automation",
+    "versionone",
+    "webdriver"
+  ],
+  "author": "VersionOne, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/versionone/node-v1driver/issues"
+  },
+  "homepage": "https://github.com/versionone/node-v1driver",
+  "dependencies": {
+    "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
+    "lodash": "^3.10.1",
+    "mocha": "^2.3.0",
+    "webdriverio": "^3.2.1"
+  }
+}
