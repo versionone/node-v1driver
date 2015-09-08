@@ -8,12 +8,12 @@ describe('Containing', function () {
 		content.should.equal('<div class="box2-item">Item 1</div>');
 	});
 
-	it("should traverse the dom looking for items in parent containers", function*() {
+	it("should traverse the dom looking for items in multiple containers", function*() {
 		var content = yield browser.getHTML("Item 1 in box 3>Item 2")
 		content.should.equal('<div class="box3-item-2">Item 2</div>');
 	});
 
-	it("should traverse the dom looking for items in parent containers", function*() {
+	it("should show a duplicate found error if container finds more than one", function*() {
 		yield browser.getHTML("box4>Duplicate A").catch(function(err){
 			err.message.should.equal("Found 2 duplicates for: box4>Duplicate A")
 		})
@@ -24,8 +24,8 @@ describe('Containing', function () {
 		content.should.equal('<div class="box5-item-1">Item 1</div>');
 	});
 
-	it("should search down only", function*() {
-		var content = yield browser.getHTML("box5-item-2>Item 1");
-		content.should.equal('<div class="box5-item-1">Item 1</div>');
+	it("should only crawl parents til first find", function*() {
+		var content = yield browser.getHTML("Item B>Item A");
+		content.should.equal('<div class="box6-item-A">Item A</div>');
 	});
 });
