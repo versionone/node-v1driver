@@ -20,4 +20,11 @@ describe('Containing', function () {
 			err.message.should.equal("Found 2 duplicates for: box4>Duplicate A")
 		})
 	});
+
+	it("should traverse the dom looking for items in parent containers", function*() {
+		yield browser.url("file:///" + __dirname + "/examples/containers.html")
+
+		var content = yield browser.getHTML("box5>inner-box>Item 1");
+		content.should.equal('<div class="box5-item-1">Item 1</div>');
+	});
 });
