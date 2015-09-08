@@ -2,7 +2,7 @@
   "name": "v1driver",
   "version": "0.0.1",
   "description": "Automation driver to interact with VersionOne.",
-  "main": "v1driver.js",
+  "main": "lib/v1driver.js",
   "scripts": {
     "test": "node_modules/.bin/wdio wdio.conf.js"
   },
