@@ -119,8 +119,6 @@ exports.config = {
         expect = chai.expect;
         chai.Should();
 
-        browser = require('webdriverio').remote(browser.requestHandler.sessionID);
-
         v1driver.init(browser);
     },
     //

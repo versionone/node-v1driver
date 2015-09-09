@@ -18,6 +18,11 @@ describe('Targeting', function () {
 		content.should.equal('<div class="div-class">Class Item</div>');
 	});
 
+	it("should look by node type", function*() {
+		var content = yield browser.getHTML("button")
+		content.should.equal('<button class="button-direct">Button</button>');
+	});
+
 	it.skip("should look at attributes by value", function*() {
 		var content = yield browser.getHTML("attribute-value")
 		content.should.equal('<div data-key="attribute-value">Attribute Item</div>');
