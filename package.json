@@ -26,6 +26,6 @@
     "chai-as-promised": "^5.1.0",
     "lodash": "^3.10.1",
     "mocha": "^2.3.2",
-    "webdriverio": "^3.2.1"
+    "webdriverio": "^3.2.2"
   }
 }
