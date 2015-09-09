@@ -31,8 +31,6 @@ describe('Containing', function () {
 
 	it("should look by class near a container", function*() {
 		var content = yield browser.getHTML("box7>Item Content>class-name");
-		console.log(yield browser.log("browser"));
-
 		content.should.equal('<div class="class-name"></div>');
 	});
 
