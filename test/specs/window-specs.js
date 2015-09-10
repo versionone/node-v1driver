@@ -1,5 +1,5 @@
 describe('Window', function () {
-    it.only("should change focus to popup window", function*() {
+    it("should change focus to popup window", function*() {
         browser.addCommand("activateNewWindow", function () {
             return this.pause(1000).getTabIds().then(function (handles) {
                 return this.getCurrentTabId().then(function (current) {
