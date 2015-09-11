@@ -8,6 +8,11 @@ describe('Targeting', function () {
 		content.should.equal('<div>Content Item</div>');
 	});
 
+	it("should look by content as contains", function*() {
+		var content = yield browser.getHTML("Item Contains")
+		content.should.equal('<div>This Item Contains Text</div>');
+	});
+
 	it('will look by id', function* () {
 		var content = yield browser.getHTML("label-id")
 		content.should.equal('<div id="label-id">ID Item</div>');

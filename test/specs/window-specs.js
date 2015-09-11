@@ -15,7 +15,6 @@ describe('Window', function () {
 
             return this.pause(1000).getTabIds()
                 .then(function (handles) {
-                    //console.log(handles);
                     return this.window(handles[0])
                 })
         });
