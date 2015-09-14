@@ -38,4 +38,14 @@ describe('Containing', function () {
 		var content = yield browser.getHTML("Item Content>input-near-content");
 		content.should.equal('<input class="input-near-content">');
 	});
+
+	it("should look within a custom label", function* () {
+		yield browser.addElementLabel(function () {
+			console.log(this, "Calling custom")
+			return this.element(".random>div#2")
+		}, "customlabel");
+
+		var content = yield browser.getHTML("box9>customlabel>Item 1")
+		content.should.equal('<div class="box9-item-1">Item 1</div>');
+	});
 });

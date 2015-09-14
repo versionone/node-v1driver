@@ -37,4 +37,13 @@ describe('Targeting', function () {
 		var content = yield browser.getHTML("text and nodes#1")
 		content.should.equal('<div class="text-with-nodes">\n        This item has text and nodes\n        <div>Inner Text</div>\n        <span>More Text</span>\n    </div>');
 	});
+
+	it("should look by custom labels", function* () {
+		yield browser.addElementLabel(function () {
+			return this.element(".random>div#2")
+		}, "customlabel");
+
+		var content = yield browser.getHTML("customlabel")
+		content.should.equal('<div>Other Custom Data</div>');
+	});
 });

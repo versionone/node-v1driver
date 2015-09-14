@@ -113,7 +113,7 @@ exports.config = {
     before: function() {
         var chai = require('chai');
         var chaiAsPromised = require('chai-as-promised');
-        var v1driver = require('./lib/v1driver');
+        v1driver = require('./lib/v1driver');
 
         chai.use(chaiAsPromised);
         expect = chai.expect;
