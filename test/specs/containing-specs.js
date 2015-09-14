@@ -41,7 +41,6 @@ describe('Containing', function () {
 
 	it("should look within a custom label", function* () {
 		yield browser.addElementLabel(function () {
-			console.log(this, "Calling custom")
 			return this.element(".random>div#2")
 		}, "customlabel");
 

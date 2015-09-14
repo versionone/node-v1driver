@@ -43,7 +43,7 @@ describe('Targeting', function () {
 			return this.element(".random>div#2")
 		}, "customlabel");
 
-		var content = yield browser.getHTML("customlabel")
+		var content = yield browser.getHTML("customlabel");
 		content.should.equal('<div>Other Custom Data</div>');
 	});
 });
