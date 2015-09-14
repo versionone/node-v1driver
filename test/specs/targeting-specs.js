@@ -32,4 +32,9 @@ describe('Targeting', function () {
 		var content = yield browser.getHTML("attribute-value")
 		content.should.equal('<div data-key="attribute-value">Attribute Item</div>');
 	});
+
+	it("should look by node type", function*() {
+		var content = yield browser.getHTML("text and nodes#1")
+		content.should.equal('<div class="text-with-nodes">\n        This item has text and nodes\n        <div>Inner Text</div>\n        <span>More Text</span>\n    </div>');
+	});
 });
