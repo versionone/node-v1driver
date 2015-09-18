@@ -13,6 +13,11 @@ describe('Targeting', function () {
 		content.should.equal('<div>This Item Contains Text</div>');
 	});
 
+	it("should look by exact match first then contains", function*() {
+		var content = yield browser.getHTML("Item Exact Match")
+		content.should.equal('<div>Item Exact Match</div>');
+	});
+
 	it('will look by id', function* () {
 		var content = yield browser.getHTML("label-id")
 		content.should.equal('<div id="label-id">ID Item</div>');
@@ -35,7 +40,7 @@ describe('Targeting', function () {
 
 	it("should look by node type", function*() {
 		var content = yield browser.getHTML("text and nodes#1")
-		content.should.equal('<div class="text-with-nodes">\n        This item has text and nodes\n        <div>Inner Text</div>\n        <span>More Text</span>\n    </div>');
+		content.should.equal('<div class="text-with-nodes">\n    This item has text and nodes\n    <div>Inner Text</div>\n    <span>More Text</span>\n</div>');
 	});
 
 	it("should look by custom labels", function* () {
@@ -45,6 +50,12 @@ describe('Targeting', function () {
 
 		var content = yield browser.getHTML("customlabel");
 		content.should.equal('<div>Other Custom Data</div>');
+	});
+
+	it("should show an error if duplicate elements are found", function*() {
+		yield browser.getHTML("Duplicate").catch(function(err){
+			err.message.should.equal("Promise was fulfilled but got rejected with the following reason: Error: Found 2 duplicates for: Duplicate")
+		})
 	});
 
 	it("should show an error if element not found", function*() {
