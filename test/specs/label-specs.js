@@ -58,6 +58,12 @@ describe('Targeting', function () {
 		})
 	});
 
+	it("should show a duplicate error only for first type of match", function*() {
+		yield browser.getHTML("Copy Exact Match").catch(function(err){
+			err.message.should.equal("Promise was fulfilled but got rejected with the following reason: Error: Found 2 duplicates for: Copy Exact Match")
+		})
+	});
+
 	it("should show an error if element not found", function*() {
 		yield browser.getHTML("item-not-found").catch(function(err){
 			err.message.should.equal("Element not found: item-not-found")
