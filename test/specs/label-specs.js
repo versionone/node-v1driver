@@ -46,4 +46,10 @@ describe('Targeting', function () {
 		var content = yield browser.getHTML("customlabel");
 		content.should.equal('<div>Other Custom Data</div>');
 	});
+
+	it("should show an error if element not found", function*() {
+		yield browser.getHTML("item-not-found").catch(function(err){
+			err.message.should.equal("Element not found: item-not-found")
+		})
+	});
 });
