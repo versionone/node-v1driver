@@ -47,4 +47,13 @@ describe('Containing', function () {
 		var content = yield browser.getHTML("box9>customlabel>Item 1")
 		content.should.equal('<div class="box9-item-1">Item 1</div>');
 	});
+
+	it("should find the custom label in container", function*(){
+		yield browser.addElementLabel(function () {
+			return this.elements("custom-class")
+		}, "customClassLabel");
+
+		var content = yield browser.getHTML("Container Label For Custom Class>customClassLabel");
+		content.should.equal('<div class="custom-class">Inside</div>');
+	})
 });
