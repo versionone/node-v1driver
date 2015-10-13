@@ -33,6 +33,11 @@ describe('Targeting', function () {
 		content.should.equal('<button class="button-direct">Button</button>');
 	});
 
+	it("should use the last index against the whole selector", function*() {
+		var content = yield browser.getHTML("h2>Shared Title#1")
+		content.should.equal('<span class="title">Shared Title</span>');
+	});
+
 	it.skip("should look at attributes by value", function*() {
 		var content = yield browser.getHTML("attribute-value")
 		content.should.equal('<div data-key="attribute-value">Attribute Item</div>');

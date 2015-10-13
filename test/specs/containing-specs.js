@@ -15,7 +15,7 @@ describe('Containing', function () {
 
 	it("should show a duplicate found error if container finds more than one", function*() {
 		yield browser.getHTML("box4>Duplicate A").catch(function(err){
-			err.message.should.equal("Found 2 duplicates for: box4>Duplicate A")
+			err.message.should.equal("Promise was fulfilled but got rejected with the following reason: Error: Found 2 duplicates for: box4>Duplicate A")
 		})
 	});
 
