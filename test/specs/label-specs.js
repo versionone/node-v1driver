@@ -33,6 +33,11 @@ describe('Targeting', function () {
 		content.should.equal('<button class="button-direct">Button</button>');
 	});
 
+	it("should allow using wdio selector", function*(){
+		var content = yield browser.getHTML("wdio:div*=wdio selector")
+		content.should.equal('<div>wdio selector</div>');
+	});
+
 	it("should use the last index against the whole selector", function*() {
 		var content = yield browser.getHTML("h2>Shared Title#1")
 		content.should.equal('<span class="title">Shared Title</span>');
