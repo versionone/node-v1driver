@@ -1,6 +1,6 @@
 {
   "name": "v1driver",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Automation driver to interact with VersionOne.",
   "main": "lib/v1driver.js",
   "scripts": {
