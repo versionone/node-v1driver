@@ -56,4 +56,9 @@ describe('Containing', function () {
 		var content = yield browser.getHTML("Container Label For Custom Class>customClassLabel");
 		content.should.equal('<div class="custom-class">Inside</div>');
 	})
+
+	it("Should limit and narrow the search to containers found", function*(){
+		var content = yield browser.getHTML("reference 1>parent>target")
+		content.should.equal('<div class="target-1">target</div>');
+	})
 });
