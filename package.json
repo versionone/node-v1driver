@@ -1,6 +1,6 @@
 {
   "name": "v1driver",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Automation driver to interact with VersionOne.",
   "main": "lib/v1driver.js",
   "scripts": {
@@ -22,10 +22,10 @@
   },
   "homepage": "https://github.com/versionone/node-v1driver",
   "dependencies": {
-    "chai": "^3.4.0",
+    "chai": "^3.4.1",
     "chai-as-promised": "^5.1.0",
     "lodash": "^3.10.1",
-    "mocha": "^2.3.3",
-    "webdriverio": "^3.2.6"
+    "mocha": "^2.3.4",
+    "webdriverio": "^3.3.0"
   }
 }
